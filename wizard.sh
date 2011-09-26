@@ -89,6 +89,7 @@ cd /home
 for i in *; do 
   usermod -G admin -a $i
   cp /home/$i/.ssh/authorized_keys /etc/ssh-keys/$i.pub
+  chmod +r /etc/ssh-keys/$i.pub
 done
 
 cp /root/.ssh/authorized_keys /etc/ssh-keys/root.pub
