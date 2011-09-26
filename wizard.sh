@@ -19,7 +19,8 @@ if [ $p = 0 ]; then
   dialog --title "Non-root uživatel"  --yesno "Neexistuje žádný non-root uživatel. Chcete ho založit?" 10 40
   if [ $? = 0 ]; then
     dialog --inputbox "Zadejte uživatelské jméno:" 10 60 2>/tmp/answer
-    useradd -m `cat /tmp/answer`
+    useradd -s /bin/bash -m `cat /tmp/answer`
+    usermod -G sudo -a `cat /tmp/answer`
   fi
 
 fi

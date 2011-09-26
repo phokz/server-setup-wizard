@@ -27,7 +27,7 @@ Např. https://www.virtualmaster.cz/cs/images/detail/1566
     chmod +x /usr/local/sbin/wizard.sh /usr/local/sbin/first.sh /usr/local/sbin/fix_mysql_passwords
 
     echo first.sh >> /root/.profile
-    sed -i 's/exit 0/\/usr\/local\/sbin\/fix_mysql_passwords\nexit 0/' /etc/rc.local
+    sed -i 's/^exit 0/\/usr\/local\/sbin\/fix_mysql_passwords\nexit 0/' /etc/rc.local
     touch /etc/mysql/change_password
 
 ### Nyní uložit jako šablonu
