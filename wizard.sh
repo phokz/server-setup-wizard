@@ -209,7 +209,7 @@ if [ $? = 0 ]; then
 
 #TODO:
  #zmena hesla v db
- FIXME
+ #FIXME - fixed by hook to /etc/rc.local
 
  #nastaveni max_clients a dalsich tak, aby se mysql vesla do 128M ram
 
