@@ -19,6 +19,7 @@ if [ $p = 0 ]; then
   dialog --title "Non-root uživatel"  --yesno "Neexistuje žádný non-root uživatel. Chcete ho založit?" 10 40
   if [ $? = 0 ]; then
     dialog --inputbox "Zadejte uživatelské jméno:" 10 60 2>/tmp/answer
+    useradd -m `cat /tmp/answer`
   fi
 
 fi
@@ -138,6 +139,8 @@ fi
 
 
 dialog --title "SSL/TLS zabezpečení apache2" --yesno "Chcete zabezpečit apache2 pomocí SSL/TLS (https) ?" 10 40
+if [ $? = 0 ]; then
+
 #chcete vytvoit csr?
   mkdir -p /root/pki
   cd /root/pki
@@ -197,7 +200,7 @@ if [ $? = 0 ]; then
 fi
 
 dialog --title 'Hotovo.' --msgbox "Nyní se můžete zkusit připojit na Váš server přes https. Můžete také otestovat úroveň zabezpečení pomocí https://www.ssllabs.com/ssldb/" 10 60
-
+fi
 
 
 dialog --title "Nastavení limitů mysql" --yesno "Chcete nastavit decentní limity mysql?" 10 40

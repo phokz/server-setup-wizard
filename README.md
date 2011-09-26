@@ -24,7 +24,7 @@ Např. https://www.virtualmaster.cz/cs/images/detail/1566
     wget -O /usr/local/sbin/first.sh https://raw.github.com/phokz/server-setup-wizard/master/first.sh
     wget -O /usr/local/sbin/fix_mysql_passwords https://raw.github.com/phokz/server-setup-wizard/master/fix_mysql_passwords
 
-    chmod +x /usr/local/sbin/wizard.sh /usr/local/sbin/first.sh
+    chmod +x /usr/local/sbin/wizard.sh /usr/local/sbin/first.sh /usr/local/sbin/fix_mysql_passwords
 
     echo first.sh >> /root/.profile
     sed -i 's/exit 0/\/usr\/local\/sbin\/fix_mysql_passwords\nexit 0/' /etc/rc.local
