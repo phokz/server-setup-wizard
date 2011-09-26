@@ -1,7 +1,7 @@
 #!/bin/bash
 
-dialog --title "NO WARRANTY | ŽÁDNÁ ZǍRUKA" --yesno "Tento skript je poskytnut tak jak je bez jakékoliv záruky. Používáte jej na vlastní riziko. Tento skript vám mimo jiné může sežrat křečka. Chcete přesto pokračovat?" 10 40
 export LC_ALL=en_US.utf8
+dialog --title "NO WARRANTY | ŽÁDNÁ ZǍRUKA" --yesno "Tento skript je poskytnut tak jak je bez jakékoliv záruky. Používáte jej na vlastní riziko. Tento skript vám mimo jiné může sežrat křečka. Chcete přesto pokračovat?" 10 40
 
 if [ $? = 0 ]; then
   echo "Jedeme dál"
@@ -163,6 +163,8 @@ dialog --title "SSL/TLS zabezpečení apache2" --yesno "Chcete zabezpečit apach
 
 
   echo "Podepsaný certifikát umístěte do /etc/ssl/certs/$h.crt"
+  echo "Stiskněte Enter"
+  read a
 
   a2enmod ssl
   a2ensite default-ssl
@@ -185,7 +187,7 @@ EOF
 
   /etc/init.d/apache2 restart
 
-dialog --title "SSL/TLS konfigurace apache2" --yesno "Máte-li podepsaný certifikát uložený v /etc/ssl/certs/$h.crt, je možné přenastavit apache2 aby používal tento certifikát. Jinak poběží se self-signed 'SnakeOil' certifikátem. Je možné přepnout apache2 na podepsaný certifikát? " 10 40
+dialog --title "SSL/TLS konfigurace apache2" --yesno "Máte-li podepsaný certifikát uložený v /etc/ssl/certs/$h.crt, je možné přenastavit apache2 aby používal tento certifikát. Jinak poběží se self-signed 'SnakeOil' certifikátem. Je možné přepnout apache2 na podepsaný certifikát? " 12 60
 if [ $? = 0 ]; then
 
   sed -i s/ssl-cert-snakeoil.pem/$h.crt/ /etc/apache2/sites-available/default-ssl
@@ -229,7 +231,7 @@ dialog --title "Nastavení limitů webserver" --yesno "Chcete nastavit decentní
 
 if [ $? = 0 ]; then
 
-  sed -i 's/memory_limit = 128M/memory_limit = 8M/' /etc/php5/apache2/php.ini
+  sed -i 's/memory_limit = 128M/memory_limit = 12M/' /etc/php5/apache2/php.ini
   sed -i 's/MaxClients          150/MaxClients          15/g' /etc/apache2/apache2.conf
   sed -i 's/KeepAliveTimeout 15/KeepAliveTimeout 4/' /etc/apache2/apache2.conf
 

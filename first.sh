@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export LC_ALL=en_US.utf8
 dialog --title "První přihlášení"  --yesno "Toto je vaše první přihlášení. Chcete spustit průvodce nastavením?" 10 40
 
 
