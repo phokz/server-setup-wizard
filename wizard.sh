@@ -242,4 +242,5 @@ if [ $? = 0 ]; then
 
 fi
 
-dialog --title 'Hotovo.' --msgbox "Jsme u konce. Nyní můžete prozkoumat, co a jak tento průvodce nastavil. Zdrojový kód naleznete mimo jiné na githubu: " 10 60
+dialog --title 'Hotovo.' --msgbox "Jsme u konce. Nyní můžete prozkoumat, co a jak tento průvodce nastavil. Zdrojový kód naleznete mimo jiné na githubu: https://github.com/phokz/server-setup-wizard" 10 60
+
