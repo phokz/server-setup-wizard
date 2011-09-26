@@ -58,10 +58,10 @@ dialog --title "Firewall"  --yesno "Chcete nastavit základní firewall (povolen
 
 if [ $? = 0 ]; then
   sed -i s/IPV6=no/IPV6=yes/ /etc/default/ufw
-  ufw enable
   ufw allow 80/tcp
   ufw allow 443/tcp
   ufw allow 22/tcp
+  ufw --force enable
 fi
 
 
