@@ -7,7 +7,7 @@ Skript usnadňuje základní nastavení a zabezpečení LAMP serveru.
 
 ## Instalace
 
-nejsnáze instalací serveru ze šablony virtualmaster: https://www.virtualmaster.cz/cs/images/1701
+nejsnáze instalací serveru ze šablony virtualmaster: https://www.virtualmaster.cz/cs/images/detail/1701
 
 ## Instalace z čistého debian systému
 
