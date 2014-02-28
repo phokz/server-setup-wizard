@@ -1,0 +1,2 @@
+
+sed -i 's/http:\/\/ftp.sh.cvut.cz\/MIRRORS\//http:\/\/ftp.cz.debian.org\//'   /etc/apt/sources.list

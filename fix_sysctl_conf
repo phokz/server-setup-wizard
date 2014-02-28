@@ -1,0 +1,2 @@
+
+echo -en "\nnet.ipv6.conf.default.autoconf = 0\nnet.ipv6.conf.all.autoconf = 0\nnet.ipv6.conf.eth0.autoconf = 0\n" >> /etc/sysctl.conf

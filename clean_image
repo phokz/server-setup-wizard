@@ -1,0 +1,5 @@
+touch /etc/mysql/change_password
+userdel -r jl
+mv /etc/network/interfaces /etc/virtualmaster.cfg.disabled /root/.bash_history /root/.mysql_history /dev/shm
+ sed -i 's/#first.sh/first.sh/' ~/.profile
+sync
